@@ -1,0 +1,31 @@
+<div class="alternate">
+    <aside>
+        <!-- Description Widget -->
+        <div class="widget postinfo_widget">
+            <a href="/">{{site.title}}</a>
+        </div>
+        <!-- Author Widget -->
+        <div class="widget author_widget">
+                <img src="/images/avatar.jpg" class="gravatar" alt="Sébastien Eustace">
+                <!--<a href="http://sebastien.eustace.io"><img src="/images/avatar.jpg" class="gravatar" alt="Sébastien Eustace"></a>-->
+                <h3>Sébastien Eustace</h3>
+                <!--<h3><a href="http://sebastien.eustace.io">Sébastien Eustace</a></h3>-->
+                <!--<a href="http://sebastien.eustace.io" class="author_url">sebastien.eustace.io</a>-->
+                <p>{{site.author.bio}}</p>
+            </div>
+        <!-- Social Widget -->
+        <div class="widget social_widget">
+            {% if site.github_username %}<a href="https://github.com/{{site.github_username}}" target="_blank" class="social social_outline github"><i class="fa fa-github"></i></a>{% endif %}
+            {% if site.twitter_username %}<a href="https://twitter.com/{{site.twitter_username}}" target="_blank" class="social social_outline twitter"><i class="fa fa-twitter"></i></a>{% endif %}
+            {% if site.linkedin_link %}<a href="http://www.linkedin.com/pub/{{site.linkedin_link}}" target="_blank" class="social social_outline linkedin"><i class="fa fa-linkedin"></i></a>{% endif %}
+            <a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank" class="social social_outline rss"><i class="fa fa-rss"></i></a>
+        </div>
+        <!-- Tag Widget -->
+        <div class="widget tag_widget">
+            <ul class="tags_list">
+            <li><a href="#">Python</a></li>
+            <li><a href="#">Cleo</a></li>
+        </ul> 
+        </div>
+    </aside>
+</div>

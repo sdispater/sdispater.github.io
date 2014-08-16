@@ -1,0 +1,78 @@
+---
+layout: default
+---
+<div class="container">
+
+    {% include sidebar_post.html %}
+
+    <div class="content">
+        <div class="widget postinfo_widget inline">
+            <a href="/">{{site.title}}</a>
+        </div>
+        <div class="inlinemenu">
+
+                <div class="graybar">
+                    <div class="left"><i class="fa fa-bars"></i>Navigation</div>
+                    <div class="right"><i class="fa fa-chevron-down"></i></div>
+                </div>
+                {% include navigation.html %}
+            </div>
+        <div class="postlist">
+            <article class="post standard single">
+                <div class="header">
+                        <a class="basicfeature postfeature" href="{{post.url}}"></a>
+                        <a href="{{ page.url | prepend: site.baseurl }}"><h1>{{ page.title }}</h1></a>
+                    <div class="info">
+                        <div class="left">
+                            <a href="{{ page.url | prepend: site.baseurl }}" class="author"><img src="/images/avatar.jpg" alt="author" class="minigravatar">Sébastien Eustace</a>
+                        </div>
+                        <div class="right">
+                            <a href="{{ page.url | prepend: site.baseurl }}" class="date"><i class="fa fa-clock-o"></i>{{ page.date | date: "%B %-d, %Y" }}</a>
+                            <span class="tags"><i class="fa fa-tags"></i>
+                              {% for tag in page.categories %}
+                                  <a href="#">{{ tag | capitalize }}</a>
+                              {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="postcontents">
+                    {{ content }}
+                </div> 
+                <div class="postfooter">
+                    <div class="social">
+                        <a href="http://twitter.com/share?text={{page.title|UrlEncode}}&url={{ page.url | prepend: site.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="largesolid twitter"><i class="fa fa-twitter"></i>Twitter</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | prepend: site.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="largesolid facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                        <a href="https://plus.google.com/share?url={{ page.url | prepend: site.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="largesolid google"><i class="fa fa-google-plus"></i>Google+</a>
+                    </div>
+                    <div class="tags">
+                        <ul class="tags_list">
+                            {% for tag in page.categories %}
+                            <li><a href="#" class="{{tag}}">{{tag | capitalize}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="permalink">
+                        Permalink: <a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
+                    </div>
+                </div>
+            </article>
+            <div class="widget author_widget">
+                <a href="http://sebastien.eustace.io"><img src="/images/avatar.jpg" class="gravatar" alt="Sébastien Eustace"></a>
+                <h3><a href="http://sebastien.eustace.io">Sébastien Eustace</a></h3>
+                <a href="http://sebastien.eustace.io" class="author_url">sebastien.eustace.io</a>
+                <p>{{site.author.bio}}</p>
+            </div>
+            <div class="comments">
+                <div class="graybar">
+                    <i class="fa fa-comments"></i>View Comments
+                </div>
+                <div id="disqus_thread"></div>
+                <div id="g-comments"></div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+</div>

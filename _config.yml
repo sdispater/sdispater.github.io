@@ -1,0 +1,21 @@
+# Site settings
+title: Sébastien Eustace's Blog
+email: sebastien@eustace.io
+description: "This blog is where I write stuff about many subjects but mainly about technology-oriented ones."
+baseurl: ""
+url: "http://blog.eustace.io"
+twitter_username: SDisPater
+github_username:  SDisPater
+linkedin_link: s%C3%A9bastien-eustace/79/592/697
+
+author:
+    bio: I am a Python developer with strong interests in Ruby and Go
+
+# Build settings
+markdown: kramdown
+permalink: /:title.html
+
+sass:
+    sass_dir: _sass
+    load_paths:
+        - "/Users/sebastien/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.7/frameworks/compass/stylesheets/"

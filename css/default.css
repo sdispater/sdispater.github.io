@@ -1,0 +1,73 @@
+p {
+    font: 400 16px/36px "Open Sans",Arial,Sans-Serif;
+    color: #727578;
+}
+
+a {
+    font: 400 16px "Open Sans",Arial,Sans-Serif;
+}
+
+.postcontents ol, .postcontents ul {
+    font: 400 16px/36px "Open Sans",Arial,Sans-Serif;
+    color: #727578;
+}
+
+.postcontents.index p {
+	display: block;
+}
+
+.postcontents p {
+    margin: 30px 0px;
+    clear: both;
+}
+
+pre, code {
+	font-family: "Consolas", "Menlo", "Monaco", "Courier New", Courier, monospace;
+	font-weight: 400;
+}
+
+.note {
+    position: relative;
+    color: #31708F !important;
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+	padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.note:before {
+    font-family: "FontAwesome","Open Sans",Arial,Sans-Serif;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2em;
+    text-decoration: inherit;
+    content: "";
+    padding-right: 10px;
+    font-size: 4em;
+    color: rgba(49, 112, 143, 0.35);
+}
+
+.note > p {
+    color: #31708F !important;
+	padding: 12px 12px 12px 4em;
+	margin: 0;
+}
+
+.note code {
+    background-color: rgba(49, 112, 143, 0.15);
+    border-color: rgba(49, 112, 143, 0.1);
+    color: inherit;
+    padding: 0px 0.5em;
+    display: inline-block;
+}
+
+p > code {
+    color: #727578;
+    padding: 0px 0.5em;
+    display: inline-block;
+}

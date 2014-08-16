@@ -1,0 +1,243 @@
+---
+layout: post
+title:  "Cleo 0.2 is out"
+date:   2014-08-07 13:07:38
+categories: Python Cleo
+---
+
+Cleo 0.2 is now out with a lot of improvements and new features.
+
+## What is cleo?
+
+Cleo eases the creation of beautiful and testable command line interfaces.
+
+It is heavily inspired by the [Symfony Console Component](https://github.com/symfony/Console), with some useful additions.
+
+Full documentation available here: <http://cleo.readthedocs.org>
+
+
+## Installation
+
+You can install Cleo in two different ways:
+
+* The easier and more straightforward is to use pip: `pip install cleo`
+
+* Use the official repository (<https://github.com/SDisPater/cleo>)
+
+
+## Usage
+The Application object manages the CLI application:
+
+{% highlight python %}
+from cleo import Application
+
+console = Application()
+console.run()
+{% endhighlight %}
+
+The ``run()`` method parses the arguments and options passed on the command
+line and executes the right command.
+
+Registering a new command can easily be done via the ``register()`` method,
+which returns a ``Command`` instance:
+
+
+{% highlight python %}
+from cleo.input import InputArgument, InputOption
+
+def hello(input_, output_):
+    name = input_.get_argument('name')
+
+    output_.writeln('Hello <info>%s</info>' % name)
+
+console\
+    .register('hello')\
+    .set_definition([
+        InputArgument('name', InputArgument.REQUIRED, 'The name'),
+    ])\
+    .set_description('Says hello!')\
+    .set_code(hello)
+{% endhighlight %}
+
+You can also register new commands via classes.
+
+{% highlight python %}
+from cleo import Command
+
+class HelloCommand(Command):
+
+    def configure(self):
+        self.set_name('hello')\
+            .set_description('Says hello!')\
+            .add_argument('name', InputArgument.REQUIRED, 'The name')
+            
+    def execute(input_, output_):
+        name = input_.get_argument('name')
+
+        output_.writeln('Hello <info>%s</info>' % name) 
+        
+console.add(HelloCommand())
+{% endhighlight %}
+
+But it might be a little too verbose for some. That's why commands can also be declared and registered via dictionaries.
+
+{% highlight python %}
+hello_command = {
+    'name': 'hello',
+    'description': 'Says hello!',
+    'arguments': [
+        'name': {
+            'mode': 'required',
+            'description': 'The name'
+        }
+    ],
+    'code': hello
+}
+
+console.add(hello_command)
+{% endhighlight %}
+
+<div class="note">
+<p>With dictionaries, you will not be able to do as many things as with classes declaration since you won't have access to the <code>Command</code> instance.</p>
+</div>
+
+
+### Output coloring
+
+Cleo provides output coloring out of the box, you just need to surround the text with tags:
+
+{% highlight python %}
+# green text
+output_.writeln('<info>foo</info>')
+
+# yellow text
+output_.writeln('<comment>foo</comment>')
+
+# black text on a cyan background
+output_.writeln('<question>foo</question>')
+
+# white text on a red background
+output_.writeln('<error>foo</error>')
+{% endhighlight %}
+
+Those are the default styles but you can easily define your own :
+
+{% highlight python %}
+style = OutputFormatterStyle('red', 'yellow', ['bold', 'blink'])
+output_.get_formatter().set_style('fire', style)
+output_.writeln('<fire>foo</fire>')
+{% endhighlight %}
+
+If you don't want to set the styles upfront, you can just as easily set the colors and options inside the tagnames :
+
+{% highlight python %}
+# green text
+output_.writeln('<fg=green>foo</fg=green>')
+
+# black text on a cyan background
+output_.writeln('<fg=black;bg=cyan>foo</fg=black;bg=cyan>')
+
+# bold text on a yellow background
+output_.writeln('<bg=yellow;options=bold>foo</bg=yellow;options=bold>')
+{% endhighlight %}
+
+### Testable commands
+
+Cleo provides input and output abstraction so that you can easily unit-test your commands, especially with the `CommandTester` class:
+
+{% highlight python %}
+from unittest import TestCase
+from cleo import Application, CommandTester
+
+class GreetCommandTest(TestCase):
+
+    def test_execute(self):
+        application = Application()
+        application.add(greet_command)
+        # Or application.add(GreetCommand()) if using classes
+
+        commmand = application.find('demo:greet')
+        command_tester = CommandTester(command)
+        command_tester.execute([('command', command.get_name())])
+
+        self.assertRegex('...', command_tester.get_display())
+
+        # ...
+{% endhighlight %}
+
+Basically, the `get_display()` method returns what would have been displayed during a normal call from the console.
+
+
+### Helpers
+
+Cleo comes bundled with some nice helpers that will cover some basic needs when developing command-line interfaces.
+
+The `DialogHelper` will, basically, prompt the user for answers:
+
+{% highlight python %}
+# ...
+if dialog.ask_confirmation(
+    output_,
+    '<question>Continue with this action?</question>',
+    False
+):
+    # Some code
+{% endhighlight %}
+
+This code will prompt for a yes/no anwser, while this code:
+
+{% highlight python %}
+# ...
+name = dialog.ask(
+    output_,
+    'Please enter your name',
+    'John Doe'
+)
+{% endhighlight %}
+
+will prompt for a more generic answer.
+
+The `ProgressHelper` allows you to display a progress bar for actions that might take a while:
+
+{% highlight python %}
+progress = self.get_helper_set().get('progress')
+
+progress.start(output_, 50)
+
+for _ in range(50)
+    # ... do some work
+
+    # advance the progress bar 1 unit
+    progress.advance()
+
+progress.finish()
+{% endhighlight %}
+
+And the `TableHelper` will display automatically tabular data:
+
+{% highlight python %}
+table = app.get_helper_set().get('table')
+table.set_headers(['ISBN', 'Title', 'Author'])
+table.set_rows([
+   ['99921-58-10-7', 'Divine Comedy', 'Dante Alighieri'],
+   ['9971-5-0210-0', 'A Tale of Two Cities', 'Charles Dickens'],
+   ['960-425-059-0', 'The Lord of the Rings', 'J. R. R. Tolkien'],
+   ['80-902734-1-6', 'And Then There Were None', 'Agatha Christie']
+])
+
+table.render(output_)
+{% endhighlight %}
+
+There is a lot more you can do with Cleo, you can just give a look at the documentation: <http://cleo.readthedocs.org>.
+
+And if you are interested by how it all works, you can just check out the [Github Repository](https://github.com/SDisPater/cleo), and feel free to contribute.
+
+
+And, finally, here are some features for the 0.3 version:
+
+* Set commands with decorators
+* Validators for the arguments and options
+* Autocompletion of commands
+
+You can check the advancement on [the Github project](https://github.com/SDisPater/cleo/issues?q=is%3Aissue+milestone%3A0.3)
+

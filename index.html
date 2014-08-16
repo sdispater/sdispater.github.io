@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="container">
+
+  {% include sidebar_default.html %}
+
+  <div class="content">
+    <div class="widget info_widget">
+      <p>{{description}}</p>
+    </div>
+    <div class="inlinemenu">
+      <div class="graybar">
+        <div class="left"><i class="fa fa-bars"></i>Navigation</div>
+        <div class="right"><i class="fa fa-chevron-down"></i></div>
+      </div>
+    </div>
+
+    <div class="postlist">
+      {% for post in site.posts %}
+        <article class="post standard">
+          <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+          <div class="info">
+              <div class="left">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="author"><img src="/images/avatar.jpg" alt="author" class="minigravatar">Sébastien Eustace</a>
+              </div>
+              <div class="right">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="date"><i class="fa fa-clock-o"></i>{{ post.date | date: "%b %-d, %Y" }}</a>
+                <span class="tags"><i class="fa fa-tags"></i>
+                              {% for tag in post.categories %}
+                                  <a href="#">{{ tag | capitalize }}</a>
+                              {% endfor %}
+                          </span>
+              </div>
+          </div>
+          <div class="postcontents index">
+            {{ post.excerpt }}
+          </div>
+          <div class="footer">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="largesolid orange left">Read More</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
