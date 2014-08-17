@@ -17,5 +17,4 @@ permalink: /:title.html
 
 sass:
     sass_dir: _sass
-    load_paths:
-        - "/Users/sebastien/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.7/frameworks/compass/stylesheets/"
+    style: :compressed
