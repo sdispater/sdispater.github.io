@@ -1,0 +1,254 @@
+@import 'compass';
+@import 'mixins';
+@import 'vars';
+
+p {
+    font: 400 16px/36px "Open Sans",Arial,Sans-Serif;
+    color: #727578;
+}
+
+a {
+    font: 400 16px "Open Sans",Arial,Sans-Serif;
+}
+
+.postcontents ol, .postcontents ul {
+    font: 400 16px/36px "Open Sans",Arial,Sans-Serif;
+    color: #727578;
+}
+
+.postcontents.index p {
+	display: block;
+}
+
+.postcontents p {
+    margin: 30px 0px;
+    clear: both;
+}
+
+pre, code {
+	font-family: "Consolas", "Menlo", "Monaco", "Courier New", Courier, monospace;
+	font-weight: 400;
+}
+
+.note {
+    position: relative;
+    color: #31708F !important;
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+	padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.note:before {
+    font-family: "FontAwesome","Open Sans",Arial,Sans-Serif;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2em;
+    text-decoration: inherit;
+    content: "";
+    padding-right: 10px;
+    font-size: 4em;
+    color: rgba(49, 112, 143, 0.35);
+}
+
+.note > p {
+    color: #31708F !important;
+	padding: 12px 12px 12px 4em;
+	margin: 0;
+}
+
+.note code {
+    background-color: rgba(49, 112, 143, 0.15);
+    border-color: rgba(49, 112, 143, 0.1);
+    color: inherit;
+    padding: 0px 0.5em;
+    display: inline-block;
+}
+
+p > code {
+    color: #727578;
+    padding: 0px 0.5em;
+    display: inline-block;
+}
+
+/* SOCIAL LINKS WIDGET */
+.soc_widget{
+    text-align:justify;
+    padding-bottom:5px;
+    a{
+        margin-bottom:15px;
+        margin-right:5px;
+    }
+    &:before{
+        content:'';
+        display:block;
+        width: 100%;
+    }
+    &:after{
+        content: '';
+        display:inline-block;
+        width: 100%;
+    }
+}
+
+.soc_outline{
+    display:inline-block;
+    position:relative;
+    width:36px;
+    height:36px;
+    border:1px solid #000;
+    text-align:center;
+    @include border-radius(60px);
+    @include transition(border-color 0.2s ease-in, color 0.1s ease-in, background 0.2s ease-in);
+    i{
+        vertical-align:-5px;
+    }
+    &.twitter{
+        border-color:$twitter_color;
+        i{ color:$twitter_color; }
+        &:hover{ background:$twitter_color; }
+    }
+    &.facebook{
+        border-color:$facebook_color;
+        i{ color:$facebook_color; }
+        &:hover{ background:$facebook_color; }
+    }
+    &.google{
+        border-color:$google_color;
+        i{ color:$google_color; }
+        &:hover{ background:$google_color; }
+    }
+    &.dribbble{
+        border-color:$dribbble_color;
+        i{ color:$dribbble_color; }
+        &:hover{ background:$dribbble_color; }
+    }
+    &.instagram{
+        border-color:$instagram_color;
+        i{ color:$instagram_color; }
+        &:hover{ background:$instagram_color; }
+    }
+    &.github{
+        border-color:$github_color;
+        i{ color:$github_color; }
+        &:hover{ background:$github_color; }
+    }
+    &.rss{
+        border-color:$rss_color;
+        i{ color:$rss_color; }
+        &:hover{ background:$rss_color; }
+    }
+    &.youtube{
+        border-color:$youtube_color;
+        i{ color:$youtube_color; }
+        &:hover{ background:$youtube_color; }
+    }
+    &.pinterest{
+        border-color:$pinterest_color;
+        i{ color:$pinterest_color; }
+        &:hover{ background:$pinterest_color; }
+    }
+    &.linkedin{
+        border-color:$linkedin_color;
+        i{ color:$linkedin_color; }
+        &:hover{ background:$linkedin_color; }
+    }
+    &.skype{
+        border-color:$skype_color;
+        i{ color:$skype_color; }
+        &:hover{ background:$skype_color; }
+    }
+    &.tumblr{
+        border-color:$tumblr_color;
+        i{ color:$tumblr_color; }
+        &:hover{ background:$tumblr_color; }
+    }
+    &:hover i{
+        color:#fff;
+    }
+}
+
+.soc_solid{
+    display:inline-block;
+    position:relative;
+    width:36px;
+    height:36px;
+    text-align:center;
+    @include border-radius(60px);
+    @include transition(border-color 0.2s ease-in, color 0.1s ease-in, background 0.2s ease-in);
+    i{
+        vertical-align:-5px;
+    }
+    &.twitter{
+        background:$twitter_color;
+        i{ color:#fff; }
+        &:hover i{ color:$twitter_color; }
+    }
+    &.facebook{
+        background:$facebook_color;
+        i{ color:#fff; }
+        &:hover i{ color:$facebook_color; }
+    }
+    &.google{
+        background:$google_color;
+        i{ color:#fff; }
+        &:hover i{ color:$google_color; }
+    }
+    &.dribbble{
+        background:$dribbble_color;
+        i{ color:#fff; }
+        &:hover i{ color:$dribbble_color; }
+    }
+    &.instagram{
+        background:$instagram_color;
+        i{ color:#fff; }
+        &:hover i{ color:$instagram_color; }
+    }
+    &.github{
+        background:$github_color;
+        i{ color:#fff; }
+        &:hover i{ color:$github_color; }
+    }
+    &.rss{
+        background:$rss_color;
+        i{ color:#fff; }
+        &:hover i{ color:$rss_color; }
+    }
+    &:hover i{
+        color:#fff;
+    }
+    &:hover{
+        background:#fff;
+    }
+}
+
+/*
+    FOOTER STYLES
+*/
+
+footer{
+    .soclinks{
+        float:right;
+        margin-top:15px;
+        a{
+            margin-left:10px;
+        }
+    }
+}
+
+.e-fa-twitter:before {
+  content: "";
+}
+
+.e-fa-linkedin:before {
+  content: "\f0e1";
+}
+
+.e-fa-google-plus:before {
+  content: "\f0d5";
+}
