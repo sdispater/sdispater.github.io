@@ -22,7 +22,7 @@ You can install Cleo in two different ways:
 
 * The easier and more straightforward is to use pip: `pip install cleo`
 
-* Use the official repository (<https://github.com/SDisPater/cleo>)
+* Use the official repository (<https://github.com/sdispater/cleo>)
 
 
 ## Usage
@@ -230,7 +230,7 @@ table.render(output_)
 
 There is a lot more you can do with Cleo, you can just give a look at the documentation: <http://cleo.readthedocs.org>.
 
-And if you are interested by how it all works, you can just check out the [Github Repository](https://github.com/SDisPater/cleo), and feel free to contribute.
+And if you are interested by how it all works, you can just check out the [Github Repository](https://github.com/sdispater/cleo), and feel free to contribute.
 
 
 And, finally, here are some features for the 0.3 version:
@@ -239,5 +239,5 @@ And, finally, here are some features for the 0.3 version:
 * Validators for the arguments and options
 * Autocompletion of commands
 
-You can check the advancement on [the Github project](https://github.com/SDisPater/cleo/issues?q=is%3Aissue+milestone%3A0.3)
+You can check the advancement on [the Github project](https://github.com/sdispater/cleo/issues?q=is%3Aissue+milestone%3A0.3)
 
