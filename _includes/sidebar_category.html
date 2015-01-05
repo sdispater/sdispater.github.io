@@ -1,7 +1,8 @@
 <div class="alternate">
     <aside>
         <!-- Description Widget -->
-        <div class="widget info_widget">
+        <div class="widget postinfo_widget">
+            <a href="/">{{site.title}}</a>
             <p>{{site.description}}</p>
         </div>
         <!-- Social Widget -->
@@ -17,7 +18,7 @@
                {% for tag in site.data.tags %}
                <li><a href="/tag/{{tag.slug}}/">{{tag.name}}</a></li>
                {% endfor %}
-        </ul>
+           </ul>
         </div>
     </aside>
 </div>

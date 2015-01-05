@@ -2,7 +2,8 @@
 layout: post
 title:  "Cleo 0.2 is out"
 date:   2014-08-07 13:07:38
-categories: Python Cleo
+category: programming
+tags: [python, cleo]
 ---
 
 Cleo 0.2 is now out with a lot of improvements and new features.
@@ -70,12 +71,12 @@ class HelloCommand(Command):
         self.set_name('hello')\
             .set_description('Says hello!')\
             .add_argument('name', InputArgument.REQUIRED, 'The name')
-            
+
     def execute(input_, output_):
         name = input_.get_argument('name')
 
-        output_.writeln('Hello <info>%s</info>' % name) 
-        
+        output_.writeln('Hello <info>%s</info>' % name)
+
 console.add(HelloCommand())
 {% endhighlight %}
 
@@ -240,4 +241,3 @@ And, finally, here are some features for the 0.3 version:
 * Autocompletion of commands
 
 You can check the advancement on [the Github project](https://github.com/sdispater/cleo/issues?q=is%3Aissue+milestone%3A0.3)
-

@@ -1,0 +1,7 @@
+- slug: general
+  name: General
+  type: 'default'
+
+- slug: programming
+  name: Programming
+  type: 'primary'

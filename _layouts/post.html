@@ -1,6 +1,38 @@
 ---
 layout: default
 ---
+{% assign post = page %}
+
+{% if post.category %}
+            {% for site_category in site.data.categories %}
+                {% if site_category.slug == post.category %}
+                    {% assign category = site_category %}
+                {% endif %}
+            {% endfor %}
+            {% if category %}
+                {% capture tags_content %}<a class="category" href="/category/{{ category.slug }}/">{{ category.name }}</a>{% endcapture %}
+            {% endif %}
+        {% else %}
+            {% assign category_content = '' %}
+        {% endif %}
+
+        {% if post.tags.size > 0 %}
+            {% capture tags_content %}{{ tags_content }}<ul class="tags_list">{% endcapture %}
+            {% for post_tag in post.tags %}
+                {% for data_tag in site.data.tags %}
+                    {% if data_tag.slug == post_tag %}
+                        {% assign tag = data_tag %}
+                    {% endif %}
+                {% endfor %}
+                {% if tag %}
+                    {% capture tags_content_temp %}{{ tags_content }}<li><a class="tag" href="/tag/{{ tag.slug }}/">{{ tag.name }}</a></li>{% if forloop.last == false %}{% else %}</ul>{% endif %}{% endcapture %}
+                    {% assign tags_content = tags_content_temp %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% assign tags_content = '' %}
+        {% endif %}
+
 <div class="container">
 
     {% include sidebar_post.html %}
@@ -29,16 +61,14 @@ layout: default
                         <div class="right">
                             <a href="{{ page.url | prepend: site.baseurl }}" class="date"><i class="fa fa-clock-o"></i>{{ page.date | date: "%B %-d, %Y" }}</a>
                             <span class="tags"><i class="fa fa-tags"></i>
-                              {% for tag in page.categories %}
-                                  <a href="#">{{ tag | capitalize }}</a>
-                              {% endfor %}
+                                {{ tags_content }}
                             </span>
                         </div>
                     </div>
                 </div>
                 <div class="postcontents">
                     {{ content }}
-                </div> 
+                </div>
                 <div class="postfooter">
                     <div class="social">
                         <a href="http://twitter.com/share?text={{page.title|UrlEncode}}&url={{ page.url | prepend: site.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="largesolid twitter"><i class="fa fa-twitter"></i>Twitter</a>
@@ -46,11 +76,7 @@ layout: default
                         <a href="https://plus.google.com/share?url={{ page.url | prepend: site.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="largesolid google"><i class="fa fa-google-plus"></i>Google+</a>
                     </div>
                     <div class="tags">
-                        <ul class="tags_list">
-                            {% for tag in page.categories %}
-                            <li><a href="#" class="{{tag}}">{{tag | capitalize}}</a></li>
-                            {% endfor %}
-                        </ul>
+                        {{tags_content}}
                     </div>
                     <div class="permalink">
                         Permalink: <a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
@@ -70,7 +96,7 @@ layout: default
                 <div id="disqus_thread"></div>
                 <div id="g-comments"></div>
             </div>
-            
+
             </div>
         </div>
     </div>

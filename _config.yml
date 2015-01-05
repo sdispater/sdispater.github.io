@@ -13,6 +13,7 @@ author:
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
 permalink: /:title.html
 
 sass:
