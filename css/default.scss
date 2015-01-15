@@ -23,6 +23,10 @@ h1 a,
     border-bottom: 0;
 }
 
+p {
+    font: 400 14px/28px "Roboto",sans-serif;
+}
+
 .postcontents p {
     font: 400 14px/28px "Roboto",sans-serif;
     color: #7A7A7A;
@@ -362,6 +366,7 @@ p > code {
 .info_widget p,
 .author_widget p {
     color: #7A7A7A;
+    font-size: 14px;
     font-family: "Roboto", sans-serif;
 }
 
