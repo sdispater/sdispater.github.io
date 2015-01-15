@@ -23,9 +23,10 @@
         <!-- Tag Widget -->
         <div class="widget tag_widget">
             <ul class="tags_list">
-            <li><a href="#">Python</a></li>
-            <li><a href="#">Cleo</a></li>
-        </ul> 
+            {% for tag in site.data.tags %}
+                <li><a class="tag" href="/tag/{{tag.slug}}/">{{tag.name}}</a></li>
+            {% endfor %}
+            </ul>
         </div>
     </aside>
 </div>

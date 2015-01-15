@@ -15,9 +15,9 @@
         <div class="widget tag_widget">
            <ul class="tags_list">
                {% for tag in site.data.tags %}
-               <li><a href="/tag/{{tag.slug}}/">{{tag.name}}</a></li>
+               <li><a class="tag" href="/tag/{{tag.slug}}/">{{tag.name}}</a></li>
                {% endfor %}
-        </ul>
+           </ul>
         </div>
     </aside>
 </div>

@@ -21,26 +21,41 @@ layout: default
       {% for post in site.posts %}
         <article class="post standard">
           <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-          <div class="info">
-              <div class="left">
-                <a href="{{ post.url | prepend: site.baseurl }}" class="author"><img src="/images/avatar.jpg" alt="author" class="minigravatar">Sébastien Eustace</a>
-              </div>
-              <div class="right">
-                <a href="{{ post.url | prepend: site.baseurl }}" class="date"><i class="fa fa-clock-o"></i>{{ post.date | date: "%b %-d, %Y" }}</a>
-                <span class="tags"><i class="fa fa-tags"></i>
+              <ul class="post-meta">
+                 <li>
+                     By <a href="{{ post.url | prepend: site.baseurl }}" class="author">Sébastien Eustace</a>
+                 </li>
+                 <li>
+                     <a href="{{ post.url | prepend: site.baseurl }}" class="date">
+                         <i class="fa fa-clock-o"></i>
+                         {{ post.date | date: "%b %-d, %Y" }}
+                    </a>
+                 </li>
+                 <li>
+                    <span class="tags"><i class="fa fa-tags"></i>
                     {% for site_category in site.data.categories %}
                         {% if site_category.slug == post.category %}
                         <a href="/category/{{site_category.slug}}/">{{site_category.name}}</a>
                         {% endif %}
                     {% endfor %}
-                </span>
-              </div>
-          </div>
-          <div class="postcontents index">
+                    </span>
+                 </li>
+                 {% if post.tags.size > 0 %}
+                 <li>
+                     {% for post_tag in post.tags %}
+                     {% for tag in site.data.tags %}
+                         {% if tag.slug == post_tag %}<a class="tag" href="/tag/{{ tag.slug }}/">{{ tag.name }}</a>
+                         {% endif %}
+                     {% endfor %}
+                     {% endfor %}
+                 </li>
+                 {% endif %}
+             </ul>
+          <div class="postcontents post-excerpt index">
             {{ post.excerpt }}
           </div>
           <div class="footer">
-            <a href="{{ post.url | prepend: site.baseurl }}" class="largesolid orange left">Read More</a>
+            <a href="{{ post.url | prepend: site.baseurl }}" class="readmore">Read More</a>
           </div>
         </article>
       {% endfor %}
