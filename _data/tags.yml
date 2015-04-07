@@ -3,3 +3,9 @@
 
 - slug: cleo
   name: Cleo
+
+- slug: eloquent
+  name: Eloquent
+
+- slug: orm
+  name: ORM
