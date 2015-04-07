@@ -88,6 +88,15 @@ a {
     h4 {
         font-size: 20px;
     }
+
+    h1 + .highlight,
+    h2 + .highlight,
+    h3 + .highlight,
+    h4 + .highlight,
+    h5 + .highlight,
+    h6 + .highlight {
+        margin-top: 30px;
+    }
 }
 
 .post {
@@ -168,13 +177,28 @@ a.tag,
 }
 
 pre, pre code {
+    font-family: "Source Code Pro", "Consolas", "Menlo", "Monaco", "Courier New", Courier, monospace;
+    color: #CB6077;
     background-color: #FAFAFA;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 pre, code {
-	font-family: "Consolas", "Menlo", "Monaco", "Courier New", Courier, monospace;
-	font-weight: 400;
+	font-family: "Source Code Pro", "Consolas", "Menlo", "Monaco", "Courier New", Courier, monospace;
+    color: #CB6077;
+    background-color: #FAFAFA;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.highlight > pre {
+	border: 1px solid #F2F2F2;
+
+    .hljs {
+        padding: 0;
+    }
 }
 
 code {
@@ -202,7 +226,8 @@ code {
     display: inline-block;
 }
 
-p > code {
+p > code,
+li > code {
     color: #727578;
     padding: 0px 0.5em;
     display: inline-block;
