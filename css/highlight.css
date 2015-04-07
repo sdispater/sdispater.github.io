@@ -122,7 +122,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs-number { color: #F4BC87 }
 .hljs-keyword, .hljs .k { color: #BEB55B; font-weight: normal; } /* Keyword */
 .hljs-function .hljs-title, .hljs .nf { color: #8AB3B5; font-weight: normal; } /* Name.Function */
-.hljs .bp { color: #CB6077 } /* Name.Builtin.Pseudo */
+.hljs .bp { color: #D28B71 } /* Name.Builtin.Pseudo */
 .hljs-decorator { color: #BB9584; font-weight: normal; } /* Name.Decorator */
 .hljs .o { color: #7A7A7A } /* Operator */
 .hljs .n { color: #7A7A7A }
@@ -131,3 +131,11 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs .nn { color: #A89BB9 } /* Name.Namespace */
 .hljs .nx { color: #A89BB9 } /* Name.Other */
 .hljs .py { color: #A89BB9 } /* Name.Property */
+
+.hljs .n .hljs-class .hljs-params {
+    color: #A89BB9;
+}
+
+.hljs .n .hljs-function .hljs-params {
+    color: #CB6077;
+}
