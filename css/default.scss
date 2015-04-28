@@ -226,11 +226,42 @@ code {
     display: inline-block;
 }
 
+.warning {
+    padding: 0px 40px;
+    margin: 30px 0px;
+    border-left: 1px solid #FF9800;;
+    color: #FFC107;
+
+    pre {
+        border: 1px solid #F2F2F2;
+
+        & > code.hljs {
+            color: #7A7A7A;
+            background: none;
+            border: 0;
+        }
+    }
+}
+
+.warning > p {
+    color: #FF9800 !important;
+	padding: 12px 12px 12px 0;
+	margin: 0;
+}
+
+.warning code {
+    background-color: rgba(255, 193, 7, 0.07);
+    border-color: rgba(255, 193, 7, 0.1);
+    color: inherit;
+    padding: 0px 0.5em;
+    display: inline-block;
+}
+
 p > code,
 li > code {
     color: #727578;
-    padding: 0px 0.5em;
-    display: inline-block;
+    padding: 0.3em 0.5em;
+    display: inline;
 }
 
 /* SOCIAL LINKS WIDGET */

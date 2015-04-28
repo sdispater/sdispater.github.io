@@ -126,7 +126,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs-decorator { color: #BB9584; font-weight: normal; } /* Name.Decorator */
 .hljs .o { color: #7A7A7A } /* Operator */
 .hljs .n { color: #7A7A7A }
-.hljs .c { color: #B8AFAD; font-style: normal; }
+.hljs .c, .hljs-comment { color: #B8AFAD; font-style: normal; }
 .hljs .nl { color: #A89BB9 } /* Name.Label */
 .hljs .nn { color: #A89BB9 } /* Name.Namespace */
 .hljs .nx { color: #A89BB9 } /* Name.Other */
@@ -138,4 +138,9 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 
 .hljs .n .hljs-function .hljs-params {
     color: #CB6077;
+}
+
+.hljs .sd .hljs-string {
+    color: #B8AFAD;
+    font-style: normal;
 }
