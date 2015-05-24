@@ -34,6 +34,7 @@ p {
 
 a {
     font: 400 14px/28px "Roboto",sans-serif;
+    color: #00BCD4;
 }
 
 .postcontents ol, .postcontents ul {
@@ -261,9 +262,12 @@ code {
 
 p > code,
 li > code {
-    color: #727578;
-    padding: 0.3em 0.5em;
+    color: #1999B3;
+    padding: 0;
     display: inline;
+    font-weight: 400;
+    border: 0;
+    background-color: #FFFFFF;
 }
 
 /* SOCIAL LINKS WIDGET */
