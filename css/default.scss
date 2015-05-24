@@ -231,16 +231,6 @@ code {
     margin: 30px 0px;
     border-left: 1px solid #FF9800;;
     color: #FFC107;
-
-    pre {
-        border: 1px solid #F2F2F2;
-
-        & > code.hljs {
-            color: #7A7A7A;
-            background: none;
-            border: 0;
-        }
-    }
 }
 
 .warning > p {
@@ -255,6 +245,18 @@ code {
     color: inherit;
     padding: 0px 0.5em;
     display: inline-block;
+}
+
+.note, .warning {
+    pre {
+        border: 1px solid #F2F2F2;
+
+        & > code.hljs {
+            color: #7A7A7A;
+            background: none;
+            border: 0;
+        }
+    }
 }
 
 p > code,
