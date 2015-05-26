@@ -36,12 +36,12 @@ Migrations are a type of version control for your database. They allow a team to
 }
 </code>
 </pre>
-<p>This file needs to be precised when using migrations commands.</p>
+<p>This file needs to be specified when using migrations commands.</p>
 </div>
 
 ### Creating migrations
 
-To create a migration, you can use the `migrations:make` command on the Eloquent CLI:
+To create a migration, you can use the `migrations:make` command on the Orator CLI:
 
 {% highlight bash %}
 orator migrations:make create_users_table -c databases.py
