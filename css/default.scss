@@ -261,7 +261,8 @@ code {
 }
 
 p > code,
-li > code {
+li > code,
+table code {
     color: #1999B3;
     padding: 0;
     display: inline;
@@ -456,4 +457,32 @@ footer{
 
 .e-fa-google-plus:before {
   content: "\f0d5";
+}
+
+table {
+    border: medium none;
+    width: 100%;
+
+    thead th {
+        font-family: "Montserrat", serif;
+        text-transform: uppercase;
+        color: #7A7A7A;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    thead th, tbody td {
+        font-size: 12px;
+        border-top: 0;
+        border-bottom: 1px solid rgba(230, 230, 230, 0.7);
+        border-left: 0;
+        border-right: 0;
+        padding: 20px;
+        white-space: pre-wrap;
+    }
+
+    tbody td {
+        font: 400 13px/28px "Roboto",sans-serif;
+        color: #7A7A7A;
+    }
 }
