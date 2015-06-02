@@ -8,6 +8,11 @@ tags: [python, orator, orm]
 
 Orator 0.6 is now out. This version introduces model events, query pagination and performance improvements and fixes.
 
+<div class="warning">
+<p>The stable version is actually the <strong>0.6.1</strong> version.</p>
+<p>The 0.6 version introduced bugs in how relationships were handled, breaking the functionality. Everything should now be fixed in 0.6.1.</p>
+</div>
+
 ## Model events
 
 Orator models fire several events, allowing you to hook into various points in
