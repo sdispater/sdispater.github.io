@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Orator ORM 0.6 is out: Model events, pagination and mutators"
+title:  "Orator ORM 0.6 is out: Model events and pagination"
 date:   2015-05-31 20:24:38
 category: programming
 tags: [python, orator, orm]
