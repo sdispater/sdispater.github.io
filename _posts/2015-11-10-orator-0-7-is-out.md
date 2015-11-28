@@ -2,8 +2,8 @@
 layout: post
 title:  "Orator 0.7 is out: Relationship decorators, seeding, model factories and cache"
 date:   2015-11-10 10:24:38
-category: releases
-tags: ['0.7']
+category: programming
+tags: [python, orator, orm]
 ---
 
 Orator 0.7 is now out. This version introduces relationship decorators, seeding, model factories and cache support.
