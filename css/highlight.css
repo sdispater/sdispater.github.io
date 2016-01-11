@@ -9,7 +9,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
   overflow-x: auto;
   padding: 0.5em;
   background: transparent;
-  color: #657b83;
+  color: #788EA5;
   -webkit-text-size-adjust: none;
 }
 
@@ -120,21 +120,23 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
     font-weight: 400;
 }
 
-.hljs-number { color: #E9767F }
+.hljs-number { color: #F9768F }
 .hljs-keyword, .hljs .k { color: #579ED1; font-weight: normal; } /* Keyword */
 .hljs-function .hljs-title, .hljs .nf { color: #8986BF; font-weight: normal; } /* Name.Function */
 .hljs .bp { color: #69B69F } /* Name.Builtin.Pseudo */
 .hljs-decorator { color: #879ED1; font-weight: normal; } /* Name.Decorator */
-.hljs .o { color: #8A8A8A } /* Operator */
-.hljs .n { color: #8A8A8A }
-.hljs .c, .hljs-comment { color: #A8AFAD; font-style: normal; }
+.hljs .o { color: #98AEC5 } /* Operator */
+.hljs .n { color: #788EA5 }
+.hljs .c, .hljs-comment { color: #A8AFC2; font-style: normal; }
 .hljs .nl { color: #E9767F } /* Name.Label */
 .hljs .nn { color: #8986BF } /* Name.Namespace */
 .hljs .nx { color: #E9767F } /* Name.Other */
 .hljs .py { color: #E9767F } /* Name.Property */
 
+.hljs .p { color: #98AEC5 }
+
 .hljs .n .hljs-class .hljs-params {
-    color: #8A8A8A;
+    color: #788EA5;
 }
 
 .hljs .n .hljs-function .hljs-params {
@@ -142,7 +144,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 }
 
 .hljs .sd .hljs-string {
-    color: #59B6CF;
+    color: #A8AFC2;
     font-style: normal;
 }
 
