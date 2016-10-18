@@ -349,7 +349,7 @@ class DatabaseSeeder(Seeder):
         self.call(UsersTableSeeder)
 ```
 
-And `users_table_seeder` shoudl look like this: 
+And `users_table_seeder` should look like this: 
 
 ```python
 from orator.seeds import Seeder
@@ -377,7 +377,7 @@ Confirm all and you should now have a fresh and seeded database.
 
 <aside class="note">
 
-<p>Calling <code>migrate:refresh</code> is the same thing as calling <code>migrate</code> then <code>db:seed</code>.</p>
+<p>Calling <code>migrate:refresh</code> is the same thing as calling <code>migrate:reset</code>, <code>migrate</code> and <code>db:seed</code>.</p>
 
 </aside>
 
@@ -519,6 +519,12 @@ class Message(db.Model):
     def user(self):
         return User
 ```
+
+<aside>
+
+<p>The relation decorators accept arguments, as described in the [documentation](https://orator-orm.com/docs/0.9/orm.html#relationships), but we do not need them here since we use the Orator conventions.</p>
+
+</aside>
 
 We add a route to retrieve the messages of a specific user:
 
@@ -1007,4 +1013,4 @@ I hope this has been useful and that it showcases the strength of Orator for suc
 
 I will probably make a follow up article later to introduce other features of Orator like query caching, polymorphic relations and the power of collections.
 
-The complete code for this API is available here: https://github.com/sdispater/twittor-api
+The complete code for this API is available here: [https://github.com/sdispater/twittor-api](https://github.com/sdispater/twittor-api)
