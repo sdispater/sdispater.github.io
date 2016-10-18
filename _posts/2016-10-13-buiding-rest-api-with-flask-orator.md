@@ -325,7 +325,7 @@ Server: Werkzeug/0.11.11 Python/3.5.2
 
 Since we are developing a new API, we will have to reset our database often to start fresh and see if everything works properly and creating users by hand can be cumbersome.
 
-To fix this, Orator provide what are called seeders that can automatically populate our database.
+To fix this, Orator provides what are called seeders that can automatically populate our database.
 
 Let's create a seeder for our `users` table: 
 
