@@ -9,11 +9,11 @@ github_username:  sdispater
 linkedin_link: s%C3%A9bastien-eustace/79/592/697
 
 author:
-    bio: I am a Python developer with strong interests in Ruby and Go
+    bio: Born & raised in France, and currently living in the beautiful city of Quito, Ecuador, I'm a software engineer, proud pythonista (but knowledgeable in other languages and technologies as well) but overall an open source lover.
 
 # Build settings
-markdown: kramdown
-highlighter: pygments
+markdown: redcarpet
+highlighter: rouge
 permalink: /:title.html
 
 sass:
