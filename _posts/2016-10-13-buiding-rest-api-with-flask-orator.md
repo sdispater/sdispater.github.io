@@ -520,9 +520,9 @@ class Message(db.Model):
         return User
 ```
 
-<aside>
+<aside class="note">
 
-<p>The relation decorators accept arguments, as described in the [documentation](https://orator-orm.com/docs/0.9/orm.html#relationships), but we do not need them here since we use the Orator conventions.</p>
+<p>The relation decorators accept arguments, as described in the <a href="https://orator-orm.com/docs/0.9/orm.html#relationships">documentation</a>, but we do not need them here since we use the Orator conventions.</p>
 
 </aside>
 
