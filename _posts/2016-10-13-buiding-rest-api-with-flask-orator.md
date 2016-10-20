@@ -34,7 +34,7 @@ Now that we have Flask installed let's create a simple web application, which we
 
 ```python
 import os
-from flask import Flask
+from flask import Flask, request
 from flask_orator import Orator, jsonify
 
 # Configuration
